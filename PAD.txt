@@ -1,0 +1,40 @@
+PAD:
+Given a number, check whether it is an abundant or deficient or perfect number N number 6 , find the factors and add it eg 6 = 1 , 2 , 3
+
+the given number and sum , if both are same = Perfect Number
+
+the given number lesser than sum = Abundant Number
+
+the given number greater than sum = Deficient Number
+
+
+CODE:
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int sum=0;
+        for(int i=1;i<=a/2;i++){
+            if((a%i==0)&&(i!=a)){
+                sum+=i;
+            }
+        }
+        if(a==sum){
+            System.out.print("Perfect Number");
+        }
+        else if(a<sum){
+            System.out.print("Abundant Number");
+        }
+        else{
+            System.out.print("Deficient Number");
+        }
+    }
+}
